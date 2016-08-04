@@ -7,8 +7,12 @@ var logger = require('morgan')
 
 var app = express();
 
+
+//PORT=(PORT && !isNaN(PORT)) ? PORT : 3000
+
+
 // all environments
-app.set('port', PORT || 3000);
+app.set('port', (PORT && !isNaN(PORT)) ? PORT : 3000);
 
 app.use(logger('dev'));
 // development only
